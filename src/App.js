@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 import Home from './pages/Home';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'; //importation des librairies
 import NotFound from './pages/NotFound';
