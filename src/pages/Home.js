@@ -1,5 +1,6 @@
 //import React from 'react'; --> Depuis la nouvelle version React est importé de façon implicite.
 
+import Countries from "../components/Countries";
 import Logo from "../components/Logo";
 import Navigation from "../components/Navigation";
 
@@ -9,7 +10,7 @@ const Home = () => {
         <div className="home"> {/* Balise supérieure à toutes les autres. On peut aussi utiliser le fragment <> */}
             <Navigation /> {/* import du composant Navigation */}
             <Logo />
-            <h1>Accueil</h1>
+            <Countries />
         </div>
     );
 
