@@ -6,6 +6,7 @@ const Countries = () => {
     const [data, setData] = useState([]);
     const [sortedData, setSortedData] = useState([]);
     const [playOnce, setPlayOnce] = useState(true);
+    const [rangeValues, setRangeValues] = useState(200);
 
     useEffect(() => {
         if (playOnce) {
@@ -21,17 +22,21 @@ const Countries = () => {
         const sortedCountry = () => {
             const countryObject = Object.keys(data).map((i) => data[i]);
             const sortedArray = countryObject.sort((a,b) => {
-                return b.population - a.population
+                return b.population - a.population;
             });
-            sortedArray.length = 30;
+            sortedArray.length = rangeValues;
             setSortedData(sortedArray);
         };
         sortedCountry();
 
-    }, [data, playOnce]);
+    }, [data, rangeValues, playOnce]);
 
     return (
     <div className="countries">
+        <div className="sort-container">
+            <input type="range" min="1" max="250" value={rangeValues} 
+            onChange={(e) => setRangeValues(e.target.value)} />
+        </div>
         <ul className="countries-list">
             {sortedData.map((country) => (
                 <Card country={country} key={country.name}/>
