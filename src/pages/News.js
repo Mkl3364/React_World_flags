@@ -13,8 +13,10 @@ const News = () => {
                 <input type="text" placeholder="Nom" />
                 <textarea placeholder="Message"></textarea>
                 <input type="submit" value="Envoyer" />
-
             </form>
+            <ul>
+                
+            </ul>
         </div>
     );
 };
